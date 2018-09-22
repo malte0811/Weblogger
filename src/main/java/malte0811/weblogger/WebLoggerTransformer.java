@@ -44,7 +44,7 @@ public class WebLoggerTransformer implements IClassTransformer
 			}
 		}
 
-		ClassWriter writer = new ClassWriter(ClassWriter.COMPUTE_MAXS|ClassWriter.COMPUTE_FRAMES);
+		ClassWriter writer = new ClassWriter(0);//ClassWriter.COMPUTE_MAXS|ClassWriter.COMPUTE_FRAMES) causes some weird issues
 		clazz.accept(writer);
 		return writer.toByteArray();
 	}
